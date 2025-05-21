@@ -22,11 +22,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-README.md
-previous.js
-src/App.jsx
-src/App.css
-src/assets/react.svg
-public/vite.svg
-
