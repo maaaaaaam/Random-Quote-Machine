@@ -21,4 +21,5 @@ var app = builder.Build();
 app.UseCors();
 
 app.MapControllers();
+
 app.Run();
