@@ -30,3 +30,6 @@ obj
 Properties
 backend/appsettings.Development.json
 backend.http
+
+# Frontend
+frontend/src/assets
