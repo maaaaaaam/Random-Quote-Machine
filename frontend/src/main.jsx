@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from "react-dom";
+
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import {Provider, connect} from "react-redux";
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './index.css';
+
 import QuoteBox from './Components/QuoteBox.jsx';
 import { reducer, quoteAction } from './redux/actionReducer.js';
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+import './index.css';
 
 const store = createStore(reducer, applyMiddleware(thunk))
 
@@ -24,14 +28,9 @@ const mapDispatchToProps = (dispatch) => {
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(QuoteBox);
 
-class Wrapper extends React.Component {
-    render() {
-        return (
-            <Provider store={store}>
-                <Container/>
-            </Provider>
-        );
-    }
-}
-
-ReactDOM.render(<Wrapper/>, document.querySelector('#root'))
+ReactDOM.render(
+    <Provider store={store}>
+        <Container/>
+    </Provider>, 
+    document.querySelector('#root')
+);
