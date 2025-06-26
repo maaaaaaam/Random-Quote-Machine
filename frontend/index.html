@@ -7,6 +7,13 @@
   </head>
   <body>
     <div id="root"></div>
+    <p id="hint">Scroll down to import quotes into the database via a .csv file</p>
+    <form id="import">
+      <label>.csv file should be in the format "Quote text","Author" without table headers</label>
+      <input type="file">
+      <button type="submit">Submit</button>
+    </form>
     <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="src/Utils/postQuotes.js"></script>
   </body>
 </html>

@@ -72,9 +72,9 @@ public class QuotesController : ControllerBase
             {
                 quotes = csv.GetRecords<Quote>().ToList();
             }
-            catch (Exception e)
+            catch (Exception err)
             {
-                return BadRequest(new { message = $"File reading error: {e.Message}" });
+                return BadRequest(new { message = $"File reading error: {err.Message}" });
             }
 
         }

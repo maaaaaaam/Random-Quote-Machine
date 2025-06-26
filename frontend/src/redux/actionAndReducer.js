@@ -1,4 +1,4 @@
-import { getQuote } from "../Utils/functions";
+import { getQuote } from "../Utils/getQuoteFunctions";
 
 export function reducer(state = {text: 'Quotes appear here', author: 'Author'}, action) {
     switch(action.type) {

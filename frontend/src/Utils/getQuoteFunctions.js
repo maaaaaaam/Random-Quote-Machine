@@ -11,8 +11,6 @@ const colors = [
     "#FF6F61"  // Light Coral
 ];
 
-
-
 export function changeColor() {
     const index = Math.floor(Math.random() * colors.length);
     const color = colors[index];
