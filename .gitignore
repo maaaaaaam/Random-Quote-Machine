@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 
+Random-Quote-Machine.sln
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -24,12 +26,12 @@ dist-ssr
 *.sw?
 
 # Backend
-Random-Quote-Machine.sln
-bin
-obj
-Properties
+backend/bin
+backend/obj
+backend/Properties
 backend/appsettings.Development.json
-backend.http
+backend/backend.http
 
 # Frontend
 frontend/src/assets
+frontend/tests
