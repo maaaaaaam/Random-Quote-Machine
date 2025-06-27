@@ -19,22 +19,6 @@ export function changeColor() {
 
 export async function getQuote() {
 
-    //  fCC API fetching
-    //
-    // let arr;
-    // try {
-    //     await fetch('https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json')
-    //         .then(res => res.json()).then(res => {
-    //             arr = res.quotes
-    //         })
-    // } catch(err) {
-    //     console.log('err:', err);
-    // }
-    // const index = Math.floor(Math.random() * (arr.length))
-    // return {text: arr[index].quote, author: arr[index].author};
-
-
-    //  Fullstack API fetching
     let quote
     try {
         await fetch('http://localhost:5142/api/quotes')

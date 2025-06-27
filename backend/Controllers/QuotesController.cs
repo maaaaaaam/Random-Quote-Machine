@@ -2,41 +2,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/quotes")]
 public class QuotesController : ControllerBase
 {
-
-    //  Hardcoded Quotes API logic
-    //
-    // public class Quote {
-    //     public required string Text { get; set; }
-    //     public required string Author { get; set; }
-    // }
-    //
-    // private static readonly Quote[] quotes = {
-    //     new Quote { Text = "Don't touch it if it works", Author = "A programmer"},
-    //     new Quote { Text = "Quote 2", Author = "Author 2"},
-    //     new Quote{ Text = "Quote 3", Author = "Author 3"}
-    // };
-    //
-    // private static readonly Random random = new();
-    //
-    // [HttpGet]
-    // public IActionResult GetRandomQuote()
-    // {
-    //     var quote = quotes[random.Next(quotes.Length)];
-    //     return Ok(quote);
-    // }
 
     private readonly Context _context;
     public QuotesController(Context context)
     {
         _context = context;
     }
-    
 
     //  GET logic
-
+    
     private static readonly Random random = new();
 
     [HttpGet]
