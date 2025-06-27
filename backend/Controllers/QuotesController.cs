@@ -37,23 +37,16 @@ public class QuotesController : ControllerBase
     public async Task<IActionResult> ImportQuotes(IFormFile file)
     {
         if (file == null || file.Length == 0) return BadRequest(new { message = "Empty or no file." });
-           
-        var quotes = new List<Quote>();
+        
+        List<Quote> quotes;
 
-        using (var reader = new StreamReader(file.OpenReadStream()))
-        using (var csv = new CsvHelper.CsvReader(reader, csvConfig))
+        try
         {
-            csv.Context.RegisterClassMap<QuoteMap>();
-
-            try
-            {
-                quotes = csv.GetRecords<Quote>().ToList();
-            }
-            catch (Exception err)
-            {
-                return BadRequest(new { message = $"File reading error: {err.Message}" });
-            }
-
+           quotes = CsvQuoteListParser.Parse(file, csvConfig);
+        }
+        catch (Exception err)
+        {
+            return BadRequest(new { message = $"File reading error: {err.Message}" });
         }
 
         await _context.Quotes.AddRangeAsync(quotes);
