@@ -8,3 +8,5 @@ Launching (ports are hardcoded (CORS, quotes fetching)):
 - Run frontend (don't forget to npm install before launching the frontend): npm run dev -- --port=5173
 
 Importing quotes via the frontend UI requires a .csv file in the format "Quote text","Author" without table headers. There is 5quotesToAdd.csv in the root folder. This file can be used for the import via the frontend UI.
+
+The reinitialization uses backend/10InitialQuotesForReinit.csv to import into the table after clearing it.

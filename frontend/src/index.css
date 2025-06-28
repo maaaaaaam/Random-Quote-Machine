@@ -73,11 +73,11 @@ svg {
   right: 3vw;
 }
 
-#import {
+#import-form, #reinit-div {
   padding: 3px 10px;
 }
 
-label {
+#import-label {
   display: block;
   margin-bottom: 5px;
 }
