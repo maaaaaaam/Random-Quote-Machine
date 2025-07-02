@@ -1,7 +1,7 @@
-document.getElementById('import-form').addEventListener('submit', async (e) => {
+document.querySelector('footer > form').addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    const file = document.querySelector('#import-form > input').files[0];
+    const file = document.querySelector('footer > form > input').files[0];
 
     if (!file) {
         alert("No file detected");
@@ -35,4 +35,28 @@ document.getElementById("reinit-btn").addEventListener('click', async () => {
         alert('Error' + err.message)
     }
 
+})
+
+document.getElementById('window-btn2').disabled = true;
+
+document.getElementById('window-btn1').addEventListener('click', async () => {
+    const res = await fetch('http://localhost:5142/api/quotes/all');
+    const quotes = await res.json();
+
+    quotes.forEach(quote => {
+        const li = document.createElement('li');
+        li.textContent = JSON.stringify(quote);
+        document.querySelector('#window > ol').appendChild(li);
+    })
+
+    document.getElementById('window').style.display = 'block';
+    document.getElementById('window-btn1').disabled = true;
+    document.getElementById('window-btn2').disabled = false;
+})
+
+document.getElementById('window-btn2').addEventListener('click', () => {
+    document.getElementById('window').style.display = 'none';
+    document.querySelector('#window > ol').innerHTML = '';
+    document.getElementById('window-btn1').disabled = false;
+    document.getElementById('window-btn2').disabled = true;
 })

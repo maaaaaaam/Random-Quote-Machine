@@ -28,6 +28,23 @@ public class QuotesController : ControllerBase
         return Ok(quote);
     }
 
+    //  GET all the table query
+    [HttpGet("all")]
+    public async Task<ActionResult<List<Quote>>> GetAllQuotes()
+    {
+        List<Quote> quotes;
+
+        try
+        {
+            quotes = await _context.Quotes.ToListAsync();
+            return quotes;
+        }
+        catch (Exception err)
+        {
+            return BadRequest(new { message = $"Fetching all the quotes failed: {err.Message}" });
+        }
+    }
+
 
     //  POST importing quotes query
 
@@ -59,7 +76,7 @@ public class QuotesController : ControllerBase
         return Ok(new { message = $"{quotes.Count} quote(s) imported." });
     }
 
-    // POST reinitializing the table query
+    //  POST reinitializing the table query
 
     [HttpPost("reinit")]
     public async Task<IActionResult> ReinitializeTable()
@@ -99,9 +116,8 @@ public class QuotesController : ControllerBase
                 await transaction.RollbackAsync();
                 return BadRequest(new { message = $"Reinitialization failed: {err.Message}" });
             }
-            
-        }
 
+        }
 
     }
 }

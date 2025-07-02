@@ -12,7 +12,7 @@
 }
 
 #getBtn, #root {background-color: var(--color); transition: background-color 8s ease-out}
-#div {color: var(--color); transition: color 8s ease-out}
+#quote-box {color: var(--color); transition: color 8s ease-out}
 
 body {
   height: 100vh;
@@ -24,7 +24,7 @@ body {
   display: flex;
 }
 
-#div {
+#quote-box {
   background-color: white;
   width: 800px;
   margin: auto;
@@ -51,7 +51,6 @@ svg {
   display: inline-block;
   margin: 0;
   font-family: 'Inspiration';
-  padding: -20px 0;
 }
 
 #getBtn {
@@ -73,11 +72,31 @@ svg {
   right: 3vw;
 }
 
-#import-form, #reinit-div {
+footer > form, footer > div {
   padding: 3px 10px;
+}
+
+footer button {
+  padding: 1px 3px;
 }
 
 #import-label {
   display: block;
   margin-bottom: 5px;
+}
+
+#window {
+  position: fixed;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: none;
+
+  background-color: white;
+  border-radius: 7px;
+  font-size: 20px;
+  box-shadow: 0 0 5px 0 rgb(97, 97, 97);
+  padding: 20px;
 }

@@ -7,7 +7,6 @@ const colors = [
     "#3A3A3A", // Graphite Grey
     "#c5b51a", // Sunny Yellow
     "#0099CC", // Mint Blue
-    "#228B22", // Forest Green
     "#FF6F61"  // Light Coral
 ];
 
