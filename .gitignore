@@ -36,3 +36,4 @@ backend/backend.http
 frontend/src/assets
 frontend/tests
 frontend/.env
+frontend/dist

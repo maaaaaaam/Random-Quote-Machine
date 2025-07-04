@@ -30,3 +30,5 @@ By default, the app uses `localhost` ports `5142` and `5173` for backend and fro
 Importing quotes via the frontend UI requires a `.csv` file in the format `"Quote text","Author"` without table headers. There is `5quotesToAdd.csv` in the **root folder**. This file exists to test the importing via the frontend UI.
 
 The reinitialization uses `backend/10InitialQuotesForReinit.csv` to import into the table after **clearing it**.
+---
+> To-do: working on Docker now
