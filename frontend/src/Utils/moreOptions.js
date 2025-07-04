@@ -1,3 +1,5 @@
+import { BACKEND_PORT } from "../env";
+
 document.querySelector('footer > form').addEventListener('submit', async (e) => {
     e.preventDefault();
     
@@ -12,7 +14,7 @@ document.querySelector('footer > form').addEventListener('submit', async (e) => 
     formData.append('file', file);
 
     try {
-        const response = await fetch('http://localhost:5142/api/quotes', {
+        const response = await fetch(`http://localhost:${BACKEND_PORT}/api/quotes`, {
             method: 'POST',
             body: formData
         });
@@ -27,7 +29,7 @@ document.querySelector('footer > form').addEventListener('submit', async (e) => 
 document.getElementById("reinit-btn").addEventListener('click', async () => {
     
     try {
-        const res = await fetch("http://localhost:5142/api/quotes/reinit", {method: 'POST'});
+        const res = await fetch(`http://localhost:${BACKEND_PORT}/api/quotes/reinit`, {method: 'POST'});
 
         if (res.ok) {alert('Reinitialization successful')}
         else {alert('Reinitialization failed')}
@@ -40,7 +42,7 @@ document.getElementById("reinit-btn").addEventListener('click', async () => {
 document.getElementById('window-btn2').disabled = true;
 
 document.getElementById('window-btn1').addEventListener('click', async () => {
-    const res = await fetch('http://localhost:5142/api/quotes/all');
+    const res = await fetch(`http://localhost:${BACKEND_PORT}/api/quotes/all`);
     const quotes = await res.json();
 
     quotes.forEach(quote => {

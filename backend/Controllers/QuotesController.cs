@@ -12,7 +12,7 @@ public class QuotesController : ControllerBase
         _context = context;
     }
 
-    //  GET query
+    //  GET random query
 
     private static readonly Random random = new();
 

@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "vitest",
-    "dev": "vite",
+    "copy-env": "cp ../.env .env",
+    "dev": "npm run copy-env && vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"

@@ -35,3 +35,4 @@ backend/backend.http
 # Frontend
 frontend/src/assets
 frontend/tests
+frontend/.env
