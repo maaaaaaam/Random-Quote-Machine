@@ -26,10 +26,10 @@ body {
 
 #quote-box {
   background-color: white;
-  width: 800px;
+  width: 55rem;
   margin: auto;
-  padding: 30px 30px 15px 30px;
-  border-radius: 5px;
+  padding: 2rem 2rem 1rem 2rem;
+  border-radius: .3rem;
 }
 
 svg {
@@ -39,7 +39,7 @@ svg {
 }
 
 #text {
-  font-size: 40px;
+  font-size: 2.5rem;
   text-align: center;
   font-family: Raleway;
   font-weight: 500;
@@ -47,7 +47,7 @@ svg {
 
 #author {
   text-align: right;
-  font-size: 70px;
+  font-size: 4.5rem;
   display: inline-block;
   margin: 0;
   font-family: 'Inspiration';
@@ -55,12 +55,12 @@ svg {
 
 #getBtn {
   color: white;
-  padding: 5px 10px;
+  padding: .5rem 1rem;
   border: none;
   display: inline-block;
-  border-radius: 5px;
-  font-size: 30px;
-  margin-top: 15px;
+  border-radius: .3rem;
+  font-size: 2rem;
+  margin-top: 1rem;
   font-family: Raleway;
 
 }
@@ -73,16 +73,16 @@ svg {
 }
 
 footer > form, footer > div {
-  padding: 3px 10px;
+  padding: .2rem 1rem;
 }
 
 footer button {
-  padding: 1px 3px;
+  padding: .2rem .1rem;
 }
 
 #import-label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: .3rem;
 }
 
 #window {
@@ -95,8 +95,11 @@ footer button {
   display: none;
 
   background-color: white;
-  border-radius: 7px;
-  font-size: 20px;
-  box-shadow: 0 0 5px 0 rgb(97, 97, 97);
-  padding: 20px;
+  border-radius: .5rem;
+  font-size: 1.3rem;
+  box-shadow: 0 0 .3rem 0 rgb(97, 97, 97);
+  padding: 1.3rem;
+
+  width: max-content;
+  max-width: 80vw;
 }
