@@ -8,7 +8,6 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
 dist-ssr
 *.local
 
@@ -31,9 +30,9 @@ backend/obj
 backend/Properties
 backend/appsettings.Development.json
 backend/backend.http
+backend/publish
 
 # Frontend
 frontend/src/assets
 frontend/tests
-frontend/.env
 frontend/dist

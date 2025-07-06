@@ -1,5 +1,3 @@
-import { BACKEND_PORT } from "../env";
-
 const colors = [
     "#4A90E2", // Deep Blue
     "#F5A623", // Warm Orange
@@ -22,7 +20,7 @@ export async function getQuote() {
 
     let quote
     try {
-        await fetch(`http://localhost:${BACKEND_PORT}/api/quotes`)
+        await fetch(`/api/quotes`)
             .then(res => res.json()).then(res => {
                 quote = res
             })

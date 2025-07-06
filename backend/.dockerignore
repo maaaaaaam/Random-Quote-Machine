@@ -1,0 +1,9 @@
+bin
+obj
+Properties
+publish
+appsettings.Development.json
+backend.http
+
+Dockerfile
+.dockerignore
