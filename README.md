@@ -10,7 +10,7 @@ A fullstack random quote machine that:
 ```bash
 docker compose up --build
 ```
-Open `localhost:80` in your browser and that's it!
+Wait until the containers are ready, open `localhost:80` in your browser and that's it!
 
 ---
 
