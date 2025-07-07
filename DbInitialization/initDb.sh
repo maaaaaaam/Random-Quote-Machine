@@ -6,7 +6,7 @@ echo "Waiting for the SQL Server ..."
 
 until /opt/mssql-tools/bin/sqlcmd -S mssql -U sa -P MyStrongPassword123! -Q "SELECT 1" &> /dev/null
 do
-echo " The SQL Server isn't ready, trying to connect again ..."
+echo "The SQL Server isn't ready, trying to reconnect ..."
 sleep 2
 done
 
