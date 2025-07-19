@@ -3,7 +3,7 @@ A fullstack random quote machine that:
 
 * Fetches quotes from a **Microsoft SQL Server** database
 * Allows quote import via a **`.csv` file**
->The app is run via Docker
+>The app is run via **Docker**
 
 ## Launching:
 
@@ -28,4 +28,4 @@ The reinitialization uses `backend/10InitialQuotesForReinit.csv` to import into 
 - Docker
 
 ---
->**TO DO: rewrite the backend in Java**
+>TO DO: rewrite the backend in **Java**
