@@ -19,4 +19,4 @@ Importing quotes via the frontend UI requires a `.csv` file in the format `"Quot
 The reinitialization uses `backend/10InitialQuotesForReinit.csv` to import into the table after **clearing it**.
 
 ---
->TO DO: rewrite the backend in Java
+>**TO DO: rewrite the backend in Java**
