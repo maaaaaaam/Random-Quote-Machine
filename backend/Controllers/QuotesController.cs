@@ -13,15 +13,13 @@ public class QuotesController : ControllerBase
     }
 
     //  GET random query
-
-    private static readonly Random random = new();
-
     [HttpGet]
     public async Task<ActionResult<Quote>> GetRandomQuote()
     {
+
         var count = await _context.Quotes.CountAsync();
 
-        int index = random.Next(count);
+        int index = new Random().Next(count);
 
         var quote = await _context.Quotes.Skip(index).FirstOrDefaultAsync();
 
