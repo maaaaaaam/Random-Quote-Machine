@@ -1,8 +1,11 @@
 # Fullstack Random Quote Machine
+> This is the **C# version** of the machine. There is a **Java** one
+
 A fullstack random quote machine that:
 
 * Fetches quotes from a **Microsoft SQL Server** database
 * Allows quote import via a **`.csv` file**
+* Has a table reinitialization feature
 >The app is run via **Docker**
 
 ## Launching:
@@ -26,6 +29,3 @@ The reinitialization uses `backend/10InitialQuotesForReinit.csv` to import into 
 - MS SQL Server
 - NginX
 - Docker
-
----
->TO DO: rewrite the backend in **Java**
