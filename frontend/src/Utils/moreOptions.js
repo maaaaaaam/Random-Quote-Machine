@@ -1,3 +1,4 @@
+//  Quotes import
 document.querySelector('footer > form').addEventListener('submit', async (e) => {
     e.preventDefault();
     
@@ -24,6 +25,7 @@ document.querySelector('footer > form').addEventListener('submit', async (e) => 
     }
 })
 
+// Table reinitialization
 document.getElementById("reinit-btn").addEventListener('click', async () => {
     
     try {
@@ -37,6 +39,7 @@ document.getElementById("reinit-btn").addEventListener('click', async () => {
 
 })
 
+// All the rest below this line is the showing table function
 document.getElementById('window-btn2').disabled = true;
 
 document.getElementById('window-btn1').addEventListener('click', async () => {
