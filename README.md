@@ -5,7 +5,7 @@ A fullstack random quote machine that:
 
 * Fetches quotes from a **Microsoft SQL Server** database
 * Allows quote import via a **`.csv` file**
-* Has a table reinitialization feature
+* Has a quotes table reinitialization feature
 >The app is run via **Docker**
 
 ## Launching:
