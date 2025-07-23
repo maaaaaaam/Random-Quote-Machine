@@ -1,5 +1,5 @@
 # Fullstack Random Quote Machine
-> This is the **C# version** of the machine. There is a **Java** one
+> This is the **C# version** of the machine that is **no longer maintained**. There is a **Java** one - https://github.com/maaaaaaam/FRQM
 
 A fullstack random quote machine that:
 
