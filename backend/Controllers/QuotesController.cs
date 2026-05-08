@@ -19,7 +19,9 @@ public class QuotesController : ControllerBase
 
         var count = await _context.Quotes.CountAsync();
 
-        int index = new Random().Next(count);
+        if (count == 0) return NotFound( new { message = "No quotes found"});
+
+        int index = Random.Shared.Next(count);
 
         var quote = await _context.Quotes.Skip(index).FirstOrDefaultAsync();
 
@@ -44,11 +46,11 @@ public class QuotesController : ControllerBase
     }
 
 
-    //  POST importing quotes query
 
-    // This config is used in the both POST queries via CsvQuoteListParser.Parse()
+    // This config is used in the both POST queries below in CsvQuoteListParser.Parse()
     private readonly static CsvHelper.Configuration.CsvConfiguration csvConfig = new(System.Globalization.CultureInfo.InvariantCulture) { HasHeaderRecord = false };
 
+    // POST importing quotes query
     [HttpPost]
     public async Task<IActionResult> ImportQuotes(IFormFile file)
     {
@@ -68,14 +70,19 @@ public class QuotesController : ControllerBase
             }
         }
 
-        await _context.Quotes.AddRangeAsync(quotes);
-        await _context.SaveChangesAsync();
+        try
+        {
+            _context.Quotes.AddRange(quotes);
+            await _context.SaveChangesAsync();
+        } catch (Exception err)
+        {
+            return BadRequest(new { message = $"Adding quotes error: {err.Message}" });
+        }
 
         return Ok(new { message = $"{quotes.Count} quote(s) imported." });
     }
 
-    //  POST reinitializing the table query
-
+    // POST reinitializing the table query
     [HttpPost("reinit")]
     public async Task<IActionResult> ReinitializeTable()
     {
@@ -94,27 +101,17 @@ public class QuotesController : ControllerBase
             }
         }
 
-        using (var transaction = await _context.Database.BeginTransactionAsync())
+        try
         {
+            _context.Quotes.RemoveRange(_context.Quotes);
+            _context.Quotes.AddRange(quotes);
+            await _context.SaveChangesAsync();
 
-            try
-            {
-                _context.Quotes.RemoveRange(_context.Quotes);
-                await _context.SaveChangesAsync();
-
-
-                await _context.Quotes.AddRangeAsync(quotes);
-                await _context.SaveChangesAsync();
-
-                await transaction.CommitAsync();
-                return Ok(new { message = "The table is reinitialized" });
-            }
-            catch (Exception err)
-            {
-                await transaction.RollbackAsync();
-                return BadRequest(new { message = $"Reinitialization failed: {err.Message}" });
-            }
-
+            return Ok(new { message = "The table is reinitialized" });
+        }
+        catch (Exception err)
+        {
+            return BadRequest(new { message = $"Reinitialization failed: {err.Message}" });
         }
 
     }
